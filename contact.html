@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact KITANY DRILLERS for water drilling services.">
+  <title>Contact Us - KITANY DRILLERS</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+  <header role="banner">
+    <nav role="navigation">
+        <div class="logo">KITANY DRILLERS</div>
+        <ul class="nav-links">
+            <li><a href="index.html" id="home-btn">Home</a></li>
+            <li><a href="services.html" id="services-btn">Services</a></li>
+            <li><a href="projects.html" id="projects-btn">Projects</a></li>
+            <li><a href="request-quote.html" id="quote-btn">Request a Quote</a></li>
+            <li><a href="faq.html" id="faq-btn">FAQ</a></li> 
+            <li><a href="contact.html" id="contact-btn">Contact</a></li>
+            <li><a href="about.html" id="about-btn">About Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+  <section class="contact">
+    <h1>Contact Us</h1>
+    <p>Email: info@kitanydrillers.com</p>
+    <p>Phone: +254 700 123 456</p>
+    <p>Address: Elgeyo Marakwet, Kenya</p>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1989.073183363151!2d36.81528251611987!3d-1.2920651991783722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10a046b58e33%3A0x24d2ac3b7d3b0b67!2sNairobi%20City!5e0!3m2!1sen!2ske!4v1680000000000" 
+      width="600" 
+      height="450" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy">
+    </iframe>
+    <form id="inquiryForm" action="submit_form.php" method="POST" class="inquiry-form">
+      <h2>Send Us an Inquiry</h2>
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+      
+      <button type="submit">Submit</button>
+    </form>
+    <div id="successAnimation" style="display:none; text-align: center; margin: 20px auto; background: #d4edda; color: green; font-weight: bold; padding: 10px; width: 90%; max-width: 600px; border-radius: 4px;">
+      <i class="fas fa-check" style="color: green; margin-right: 8px;"></i>
+      <span>Inquiry submitted successfully!</span>
+    </div>
+  </section>
+
+  <footer style="background-color: green; color: white; padding: 20px; text-align: center;">
+    <p>&copy; 2025 KITANY DRILLERS. All Rights Reserved.</p>
+    <ul class="social-links" style="list-style: none; padding: 0; display: flex; justify-content: center; gap: 15px;">
+        <li><a href="https://facebook.com" target="_blank" style="color: white;"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="https://twitter.com" target="_blank" style="color: white;"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="https://linkedin.com" target="_blank" style="color: white;"><i class="fab fa-linkedin-in"></i></a></li>
+        <li><a href="https://whatsapp.com" target="_blank" style="color: white;"><i class="fab fa-whatsapp"></i></a></li>
+    </ul>
+</footer>
+
+  <script>
+    function checkInquirySubmission(event) {
+      event.preventDefault(); 
+
+      const formData = new FormData(document.getElementById('inquiryForm'));
+      fetch('submit_form.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        if (data.trim() === 'success') {
+          let successDiv = document.getElementById('successAnimation');
+          successDiv.style.display = 'block';
+          setTimeout(() => {
+            successDiv.style.display = 'none';
+          }, 3000);
+          document.getElementById('inquiryForm').reset();
+        } else {
+          alert("Submission failed. Please try again.");
+        }
+      })
+      .catch(error => {
+        console.error("Error:", error);
+        alert("An error occurred. Please try again.");
+      });
+    }
+    document.getElementById('inquiryForm').addEventListener('submit', checkInquirySubmission);
+  </script>
+</body>
+</html>

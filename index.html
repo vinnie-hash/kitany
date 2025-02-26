@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trusted water drilling solutions across Kenya, South Sudan, and Uganda.">
+    <meta name="keywords" content="water drilling, borehole services, KITANY DRILLERS, East Africa">
+    <title>KITANY DRILLERS - Trusted Water Drilling Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "KITANY DRILLERS",
+        "url": "https://www.kitanydrillers.com",
+        "logo": "https://www.kitanydrillers.com/logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+254712345678",
+            "contactType": "customer service"
+        }
+    }
+    </script>
+    
+    <style>
+        .btn {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .btn:hover { background-color: darkgreen; }
+
+        .nav-links a {
+            padding: 10px 20px;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+            color: white; 
+        }
+
+        .nav-links a:hover { background-color: darkgreen; }
+        .nav-links a.active { background-color: transparent !important; color: white !important; }
+    </style>
+</head>
+<body>
+    <header role="banner">
+        <nav role="navigation">
+            <div class="logo">KITANY DRILLERS</div>
+            <ul class="nav-links">
+                <li><a href="index.html" id="home-btn">Home</a></li>
+                <li><a href="services.html" id="services-btn">Services</a></li>
+                <li><a href="projects.html" id="projects-btn">Projects</a></li>
+                <li><a href="request-quote.html" id="quote-btn">Request a Quote</a></li>
+                <li><a href="faq.html" id="faq-btn">FAQ</a></li> 
+                <li><a href="contact.html" id="contact-btn">Contact</a></li>
+                <li><a href="about.html" id="about-btn">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title">Welcome to KITANY DRILLERS</h1>
+        <p>Trusted water drilling solutions across Kenya, South Sudan, and Uganda.</p>
+        <a href="request-quote.html" class="btn">Get Started</a>
+    </section>
+
+    <section class="projects" aria-label="Featured Projects">
+        <h2>Featured Projects</h2>
+        <div class="project-card">
+            <img src="project1.jpg" alt="Borehole Drilling in Eldoret" loading="lazy">
+            <h3>Borehole Drilling in Eldoret</h3>
+            <p>Providing clean water to a local community.</p>
+        </div>
+        <div class="project-card">
+            <img src="project2.jpg" alt="Water Treatment Plant in Nakuru" loading="lazy">
+            <h3>Water Treatment Plant</h3>
+            <p>Installation of a modern water treatment plant in Nakuru.</p>
+        </div>
+    </section>
+    
+    <footer style="background-color: green; color: white; padding: 20px; text-align: center;">
+        <p>&copy; 2025 KITANY DRILLERS. All Rights Reserved.</p>
+        <ul class="social-links" style="list-style: none; padding: 0; display: flex; justify-content: center; gap: 15px;">
+            <li><a href="https://facebook.com" target="_blank" style="color: white;"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://twitter.com" target="_blank" style="color: white;"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://linkedin.com" target="_blank" style="color: white;"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="https://whatsapp.com" target="_blank" style="color: white;"><i class="fab fa-whatsapp"></i></a></li>
+        </ul>
+    </footer>
+    
+
+    <script src="scripts.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const currentPath = window.location.pathname.split("/").pop();
+            const navLinks = {
+                'index.html': 'home-btn',
+                'services.html': 'services-btn',
+                'projects.html': 'projects-btn',
+                'request-quote.html': 'quote-btn',
+                'faq.html': 'faq-btn',
+                'contact.html': 'contact-btn',
+                'about.html': 'about-btn'
+            };
+
+            Object.values(navLinks).forEach(id => document.getElementById(id)?.classList.remove('active'));
+            if (navLinks[currentPath]) {
+                document.getElementById(navLinks[currentPath])?.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
