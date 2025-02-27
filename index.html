@@ -59,6 +59,51 @@
 
         .nav-links a:hover { background-color: darkgreen; }
         .nav-links a.active { background-color: transparent !important; color: white !important; }
+
+
+            
+        .projects {
+            text-align: center;
+            padding: 40px;
+            font-family: Arial, sans-serif;
+        }
+    
+        .project {
+            margin: 20px 0;
+        }
+    
+        .project-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+    
+        .project-content.reverse {
+            flex-direction: row-reverse;
+        }
+    
+        .project-image {
+            width: 40%;
+            border-radius: 10px;
+        }
+    
+        .project-text {
+            width: 50%;
+            text-align: left;
+        }
+    
+        @media (max-width: 768px) {
+            .project-content {
+                flex-direction: column;
+                text-align: center;
+            }
+    
+            .project-text, .project-image {
+                width: 100%;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -82,20 +127,30 @@
         <p>Trusted water drilling solutions across Kenya, South Sudan, and Uganda.</p>
         <a href="request-quote.html" class="btn">Get Started</a>
     </section>
-
     <section class="projects" aria-label="Featured Projects">
         <h2>Featured Projects</h2>
-        <div class="project-card">
-            <img src="project1.jpg" alt="Borehole Drilling in Eldoret" loading="lazy">
-            <h3>Borehole Drilling in Eldoret</h3>
-            <p>Providing clean water to a local community.</p>
+        <div class="project">
+            <div class="project-content reverse">
+                <div class="project-text">
+                    <h3>Borehole Drilling in Eldoret</h3>
+                    <p>Our borehole drilling project in Eldoret is a groundbreaking initiative aimed at ensuring sustainable access to clean water. Utilizing advanced drilling techniques, we have created a reliable water source that benefits hundreds of residents. This initiative not only improves public health but also supports local agriculture, enhancing food security and economic stability in the region. The project also incorporates eco-friendly water conservation strategies to maximize efficiency and sustainability for future generations.</p>
+                </div>
+                <img src="profile(2).jpg" alt="Borehole Drilling in Eldoret" loading="lazy" class="project-image right">
+            </div>
         </div>
-        <div class="project-card">
-            <img src="project2.jpg" alt="Water Treatment Plant in Nakuru" loading="lazy">
-            <h3>Water Treatment Plant</h3>
-            <p>Installation of a modern water treatment plant in Nakuru.</p>
+        <div class="project">
+            <div class="project-content">
+                <div class="project-text">
+                    <h3>Water Treatment Plant</h3>
+                    <p>The installation of a state-of-the-art water treatment plant in Nakuru is transforming the availability of clean and safe drinking water. This advanced facility is equipped with the latest filtration, purification, and chemical treatment technologies to ensure the highest standards of water quality. By eliminating harmful contaminants, the plant significantly reduces waterborne diseases and enhances public health outcomes. Additionally, its energy-efficient design minimizes environmental impact, making it a sustainable solution for long-term water management. The project also serves as a model for future water treatment initiatives, promoting resilience and improved sanitation across the region.</p>
+                </div>
+                <img src="profile(1).jpg" alt="Water Treatment Plant in Nakuru" loading="lazy" class="project-image right">
+            </div>
         </div>
     </section>
+
+    
+    
     
     <footer style="background-color: green; color: white; padding: 20px; text-align: center;">
         <p>&copy; 2025 KITANY DRILLERS. All Rights Reserved.</p>
