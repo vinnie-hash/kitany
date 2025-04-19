@@ -1,82 +1,674 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Frequently Asked Questions about KITANY DRILLERS services.">
-  <title>FAQ - KITANY DRILLERS</title>
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="script.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Frequently Asked Questions about KITANY DRILLERS' water drilling services, pricing, and operations.">
+    <meta name="keywords" content="water drilling FAQ, borehole questions, drilling services information, water solutions queries">
+    <title>FAQ - KITANY DRILLERS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-    .page-container {
-      min-height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-    .content-wrap {
-      flex: 1;
-    }
-  </style>
+    <style>
+        :root {
+            --primary-color: #006837;
+            --secondary-color: #004225;
+            --accent-color: #8DC63F;
+            --light-color: #f8f9fa;
+            --dark-color: #333;
+            --text-color: #444;
+            --white: #fff;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            overflow-x: hidden;
+            background-color: var(--light-color);
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }
+        
+        /* Navigation */
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .nav-links a {
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            background-color: var(--secondary-color);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 120px 0 80px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+            font-size: 2rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 15px auto;
+        }
+        
+        .faq-intro {
+            max-width: 800px;
+            margin: 0 auto 50px;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background-color: var(--white);
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .faq-question {
+            padding: 20px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .faq-question:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .faq-question::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            transition: var(--transition);
+        }
+        
+        .faq-question.active {
+            background-color: var(--secondary-color);
+        }
+        
+        .faq-question.active::after {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-answer-content {
+            padding: 20px 0;
+        }
+        
+        /* Contact CTA Section */
+        .contact-cta {
+            padding: 60px 0;
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .contact-cta h2 {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .contact-cta p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+        
+        .cta-btn:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            gap: 30px;
+        }
+        
+        .footer-section {
+            flex: 1 1 300px;
+            text-align: left;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .footer-section p, .footer-section a {
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .footer-section a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--secondary-color);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+                transition: var(--transition);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .faq-section {
+                padding: 100px 0 60px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .footer-section {
+                text-align: center;
+            }
+            
+            .footer-section h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .faq-intro {
+                font-size: 1rem;
+            }
+            
+            .faq-question {
+                padding: 15px;
+                font-size: 0.95rem;
+            }
+            
+            .faq-answer-content {
+                padding: 15px 0;
+                font-size: 0.9rem;
+            }
+            
+            .contact-cta h2 {
+                font-size: 1.5rem;
+            }
+            
+            .contact-cta p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header role="banner">
+        <div class="container header-container">
+            <div class="logo">KITANY <span>DRILLERS</span></div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" id="home-btn">Home</a></li>
+                <li><a href="services.html" id="services-btn">Services</a></li>
+                <li><a href="projects.html" id="projects-btn">Projects</a></li>
+                <li><a href="request-quote.html" id="quote-btn">Request a Quote</a></li>
+                <li><a href="faq.html" id="faq-btn" class="active">FAQ</a></li>
+                <li><a href="contact.html" id="contact-btn">Contact</a></li>
+                <li><a href="about.html" id="about-btn">About Us</a></li>
+            </ul>
+        </div>
+    </header>
 
-<header role="banner">
-  <nav role="navigation">
-      <div class="logo">KITANY DRILLERS</div>
-      <ul class="nav-links">
-          <li><a href="index.html" id="home-btn">Home</a></li>
-          <li><a href="services.html" id="services-btn">Services</a></li>
-          <li><a href="projects.html" id="projects-btn">Projects</a></li>
-          <li><a href="request-quote.html" id="quote-btn">Request a Quote</a></li>
-          <li><a href="faq.html" id="faq-btn">FAQ</a></li> 
-          <li><a href="contact.html" id="contact-btn">Contact</a></li>
-          <li><a href="about.html" id="about-btn">About Us</a></li>
-      </ul>
-  </nav>
-</header>
-
-    <div class="content-wrap">
-      <section class="faq">
-        <h1>FAQ</h1>
-        <p>Common questions and answers about our drilling services.</p>
-        <details>
-          <summary>What areas do you serve?</summary>
-          <p>We operate in Kenya, parts of South Sudan, and Uganda.</p>
-        </details>
-        <details>
-          <summary>What is your pricing model?</summary>
-          <p>Our pricing is tailored to each project. Contact us for a custom quote.</p>
-        </details>
-        <details>
-          <summary>How long does it take to drill a borehole?</summary>
-          <p>The duration depends on the depth and ground conditions, but typically it takes between 2 to 7 days.</p>
-        </details>
-        <details>
-          <summary>Do you offer maintenance services?</summary>
-          <p>Yes, we provide regular maintenance and repair services to ensure the longevity of your borehole.</p>
-        </details>
-        <details>
-          <summary>What type of equipment do you use?</summary>
-          <p>We use modern and efficient drilling rigs and support equipment to ensure quality and safety during drilling.</p>
-        </details>
-      </section>
-    </div>
+    <section class="faq-section" aria-labelledby="faq-title">
+        <div class="container">
+            <h2 id="faq-title" class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-intro">
+                <p>Find answers to common questions about our water drilling services, processes, and policies. If you don't find what you're looking for, please don't hesitate to contact us directly.</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What areas do you serve?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>We provide water drilling services throughout Kenya, with extensive experience in Elgeyo Marakwet, Uasin Gishu, Nakuru, and West Pokot counties. We also operate in selected regions of South Sudan and Uganda. Our team can advise on the specific availability for your location.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is your pricing model?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Our pricing is project-specific and depends on several factors including depth requirements, geological conditions, equipment needed, and location accessibility. We provide transparent, customized quotes after conducting a site assessment. Typical borehole projects range from KES 500,000 to KES 2,000,000, including drilling, casing, and basic pump installation.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does it take to drill a borehole?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>The duration varies based on depth and ground conditions. Most residential boreholes (100-150m depth) take 2-4 days for drilling and casing. Deeper or more complex projects may take up to 7 days. This doesn't include the initial survey (1-2 days) or pump installation (1 day). We provide estimated timelines during the consultation phase.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you offer maintenance services?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Yes, we provide comprehensive maintenance packages that include:</p>
+                            <ul style="margin: 15px 0 15px 20px;">
+                                <li>• Annual system inspections</li>
+                                <li>• Pump servicing and repairs</li>
+                                <li>• Water quality testing</li>
+                                <li>• Yield testing and optimization</li>
+                                <li>• Emergency repair services</li>
+                            </ul>
+                            <p>We recommend at least annual maintenance to ensure optimal performance and longevity of your water system.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What type of equipment do you use?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>We utilize modern, well-maintained equipment including:</p>
+                            <ul style="margin: 15px 0 15px 20px;">
+                                <li>• Rotary drilling rigs (capacity up to 300m depth)</li>
+                                <li>• Air percussion (down-the-hole) drills for hard rock</li>
+                                <li>• Geophysical survey equipment for water detection</li>
+                                <li>• Stainless steel and PVC casing options</li>
+                                <li>• Solar and electric pump systems</li>
+                            </ul>
+                            <p>All equipment meets industry safety and environmental standards.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I know if my property has groundwater?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Our hydrogeological survey (conducted before drilling) assesses groundwater potential through:</p>
+                            <ul style="margin: 15px 0 15px 20px;">
+                                <li>• Geological mapping and analysis</li>
+                                <li>• Geophysical surveys (electrical resistivity)</li>
+                                <li>• Local hydrological data review</li>
+                                <li>• Neighboring borehole performance</li>
+                            </ul>
+                            <p>While we can't guarantee water until drilling, our surveys have a 90%+ success rate in identifying viable water sources.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What permits are required for drilling?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Requirements vary by location but typically include:</p>
+                            <ul style="margin: 15px 0 15px 20px;">
+                                <li>• Water Resources Authority (WRA) permit</li>
+                                <li>• NEMA environmental impact assessment (for large projects)</li>
+                                <li>• County government clearance</li>
+                            </ul>
+                            <p>We handle all permit applications on your behalf as part of our service, typically adding 2-4 weeks to project timelines.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What warranty do you provide?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>We offer:</p>
+                            <ul style="margin: 15px 0 15px 20px;">
+                                <li>• 1-year warranty on drilling workmanship</li>
+                                <li>• Manufacturer warranties on equipment (typically 2-5 years)</li>
+                                <li>• 30-day guarantee on pump installation</li>
+                            </ul>
+                            <p>Warranty terms are detailed in your contract and may vary based on project specifics.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     
-    <footer style="background-color: green; color: white; padding: 20px; text-align: center;">
-      <p>&copy; 2025 KITANY DRILLERS. All Rights Reserved.</p>
-      <ul class="social-links" style="list-style: none; padding: 0; display: flex; justify-content: center; gap: 15px;">
-          <li><a href="https://facebook.com" target="_blank" style="color: white;"><i class="fab fa-facebook-f"></i></a></li>
-          <li><a href="https://twitter.com" target="_blank" style="color: white;"><i class="fab fa-twitter"></i></a></li>
-          <li><a href="https://linkedin.com" target="_blank" style="color: white;"><i class="fab fa-linkedin-in"></i></a></li>
-          <li><a href="https://whatsapp.com" target="_blank" style="color: white;"><i class="fab fa-whatsapp"></i></a></li>
-      </ul>
-  </footer>
-  
-  </div>
+    <section class="contact-cta" aria-labelledby="cta-title">
+        <div class="container">
+            <h2 id="cta-title">Still have questions?</h2>
+            <p>Our water experts are ready to provide detailed answers and advice for your specific needs.</p>
+            <a href="contact.html" class="cta-btn">Contact Us Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>KITANY DRILLERS is a leading provider of water drilling solutions in East Africa, with expertise in borehole drilling, water treatment, and sustainable water management.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="request-quote.html">Get a Quote</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+                    <p><i class="fas fa-phone"></i> +254 712 345 678</p>
+                    <p><i class="fas fa-envelope"></i> info@kitanydrillers.com</p>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://whatsapp.com" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 KITANY DRILLERS. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Mobile menu toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                hamburger.innerHTML = navLinks.classList.contains('active') ? 
+                    '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
+            
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+            
+            // Active link highlighting
+            const currentPath = window.location.pathname.split("/").pop();
+            const navLinksMap = {
+                'index.html': 'home-btn',
+                'services.html': 'services-btn',
+                'projects.html': 'projects-btn',
+                'request-quote.html': 'quote-btn',
+                'faq.html': 'faq-btn',
+                'contact.html': 'contact-btn',
+                'about.html': 'about-btn'
+            };
+
+            Object.values(navLinksMap).forEach(id => {
+                const element = document.getElementById(id);
+                if (element) element.classList.remove('active');
+            });
+            
+            if (navLinksMap[currentPath]) {
+                document.getElementById(navLinksMap[currentPath])?.classList.add('active');
+            }
+            
+            // FAQ functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    question.classList.toggle('active');
+                    const answer = question.parentElement.querySelector('.faq-answer');
+                    
+                    if (question.classList.contains('active')) {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    } else {
+                        answer.style.maxHeight = '0';
+                    }
+                    
+                    // Close other open FAQs
+                    faqQuestions.forEach(q => {
+                        if (q !== question && q.classList.contains('active')) {
+                            q.classList.remove('active');
+                            q.parentElement.querySelector('.faq-answer').style.maxHeight = '0';
+                        }
+                    });
+                });
+            });
+            
+            // Add animation to FAQ items when they come into view
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            const faqObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            faqItems.forEach((item, index) => {
+                item.style.opacity = 0;
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+                faqObserver.observe(item);
+            });
+        });
+    </script>
 </body>
 </html>

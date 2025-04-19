@@ -1,68 +1,884 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects - KITANY DRILLERS</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore KITANY DRILLERS' successful water projects across East Africa including borehole drilling and water treatment installations.">
+    <meta name="keywords" content="water projects, borehole drilling projects, water treatment installations, completed water works">
+    <title>Projects - KITANY DRILLERS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #006837;
+            --secondary-color: #004225;
+            --accent-color: #8DC63F;
+            --light-color: #f8f9fa;
+            --dark-color: #333;
+            --text-color: #444;
+            --white: #fff;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            overflow-x: hidden;
+            background-color: var(--light-color);
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }
+        
+        /* Navigation */
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .nav-links a {
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            background-color: var(--secondary-color);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        /* Projects Section */
+        .projects-section {
+            padding: 120px 0 80px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+            font-size: 2rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 15px auto;
+        }
+        
+        .projects-intro {
+            max-width: 800px;
+            margin: 0 auto 50px;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-image {
+            height: 250px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .project-content {
+            padding: 30px;
+        }
+        
+        .project-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .project-content h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .project-content p {
+            margin-bottom: 20px;
+        }
+        
+        .project-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .detail-item i {
+            color: var(--accent-color);
+        }
+        
+        .project-cta {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .project-cta:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            padding: 80px 0;
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .stat-item {
+            padding: 30px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+        }
+        
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .testimonials-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background-color: var(--light-color);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '\201C';
+            font-family: Georgia, serif;
+            font-size: 4rem;
+            color: var(--accent-color);
+            position: absolute;
+            left: 20px;
+            top: 10px;
+            opacity: 0.3;
+        }
+        
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #ddd;
+            background-size: cover;
+        }
+        
+        .author-info h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            gap: 30px;
+        }
+        
+        .footer-section {
+            flex: 1 1 300px;
+            text-align: left;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .footer-section p, .footer-section a {
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .footer-section a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .projects-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--secondary-color);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+                transition: var(--transition);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .projects-section {
+                padding: 100px 0 60px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .footer-section {
+                text-align: center;
+            }
+            
+            .footer-section h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .projects-intro {
+                font-size: 1rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-content {
+                padding: 20px;
+            }
+            
+            .project-content h3 {
+                font-size: 1.2rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
+    <header role="banner">
+        <div class="container header-container">
+            <div class="logo">KITANY <span>DRILLERS</span></div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" id="home-btn">Home</a></li>
+                <li><a href="services.html" id="services-btn">Services</a></li>
+                <li><a href="projects.html" id="projects-btn" class="active">Projects</a></li>
+                <li><a href="request-quote.html" id="quote-btn">Request a Quote</a></li>
+                <li><a href="faq.html" id="faq-btn">FAQ</a></li>
+                <li><a href="contact.html" id="contact-btn">Contact</a></li>
+                <li><a href="about.html" id="about-btn">About Us</a></li>
+            </ul>
+        </div>
+    </header>
 
-  <header role="banner">
-    <nav role="navigation">
-        <div class="logo">KITANY DRILLERS</div>
-        <ul class="nav-links">
-            <li><a href="index.html" id="home-btn">Home</a></li>
-            <li><a href="services.html" id="services-btn">Services</a></li>
-            <li><a href="projects.html" id="projects-btn">Projects</a></li>
-            <li><a href="request-quote.html" id="quote-btn">Request a Quote</a></li>
-            <li><a href="faq.html" id="faq-btn">FAQ</a></li> 
-            <li><a href="contact.html" id="contact-btn">Contact</a></li>
-            <li><a href="about.html" id="about-btn">About Us</a></li>
-        </ul>
-    </nav>
-</header>
+    <section class="projects-section" aria-labelledby="projects-title">
+        <div class="container">
+            <h2 id="projects-title" class="section-title">Our Completed Projects</h2>
+            
+            <div class="projects-intro">
+                <p>Explore our portfolio of successful water projects across East Africa. Each project represents our commitment to delivering sustainable water solutions that transform communities and improve lives.</p>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae')"></div>
+                    <div class="project-content">
+                        <h3>Borehole Alpha - Elgeyo Marakwet</h3>
+                        <p>A deep-water borehole project providing clean water to over 500 households in rural Elgeyo Marakwet County, completed in 2023.</p>
+                        
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Elgeyo Marakwet, Kenya</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Completed: June 2023</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-tint"></i>
+                                <span>Output: 5,000L/hr</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>Depth: 180m</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="project-cta">View Project Details</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1551218808-94e220e084d2')"></div>
+                    <div class="project-content">
+                        <h3>Nakuru Water Purification</h3>
+                        <p>State-of-the-art water treatment facility serving Nakuru town, capable of processing 50,000 liters of clean water daily.</p>
+                        
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Nakuru, Kenya</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Completed: March 2024</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span>Serves: 2,000 people</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-filter"></i>
+                                <span>3-stage filtration</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="project-cta">View Project Details</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1509316785289-025f5b846b35')"></div>
+                    <div class="project-content">
+                        <h3>Community Borehole Beta - West Pokot</h3>
+                        <p>Solar-powered borehole system providing reliable water access to schools and communities in West Pokot County.</p>
+                        
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>West Pokot, Kenya</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Completed: November 2023</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-solar-panel"></i>
+                                <span>Solar-powered</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-school"></i>
+                                <span>Serves 3 schools</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="project-cta">View Project Details</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1586771107445-d3ca888129ce')"></div>
+                    <div class="project-content">
+                        <h3>Uasin Gishu Irrigation Project</h3>
+                        <p>Large-scale water project supporting agricultural irrigation across 50 acres of farmland in Uasin Gishu County.</p>
+                        
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Uasin Gishu, Kenya</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Completed: August 2023</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-tractor"></i>
+                                <span>50 acres irrigated</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-water"></i>
+                                <span>10,000L storage</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="project-cta">View Project Details</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1624398755210-1053e8e00504')"></div>
+                    <div class="project-content">
+                        <h3>Juba Water Access Initiative</h3>
+                        <p>Emergency water access project providing clean water to displaced communities in South Sudan's capital.</p>
+                        
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Juba, South Sudan</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Completed: January 2024</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span>1,500 beneficiaries</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-hand-holding-water"></i>
+                                <span>3 distribution points</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="project-cta">View Project Details</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1509391366360-2e959784a276')"></div>
+                    <div class="project-content">
+                        <h3>Kampala Urban Water Solution</h3>
+                        <p>Urban water access project providing reliable clean water to a densely populated neighborhood in Kampala.</p>
+                        
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Kampala, Uganda</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Completed: May 2024</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-city"></i>
+                                <span>Urban community</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-tint"></i>
+                                <span>Output: 8,000L/hr</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="project-cta">View Project Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="stats-section" aria-labelledby="stats-title">
+        <div class="container">
+            <h2 id="stats-title" class="section-title" style="color: var(--white)">Our Impact in Numbers</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">150+</div>
+                    <div class="stat-label">Completed Projects</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">500K+</div>
+                    <div class="stat-label">People Served</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">300+</div>
+                    <div class="stat-label">Boreholes Drilled</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials-section" aria-labelledby="testimonials-title">
+        <div class="container">
+            <h2 id="testimonials-title" class="section-title">What Our Clients Say</h2>
+            
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>The borehole project completed by KITANY DRILLERS has transformed our community. For the first time, our school has reliable access to clean water, improving both sanitation and attendance rates.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background-image: url('https://randomuser.me/api/portraits/men/32.jpg')"></div>
+                        <div class="author-info">
+                            <h4>James Kiprop</h4>
+                            <p>Headmaster, West Pokot Primary</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>We partnered with KITANY DRILLERS for our irrigation project and were impressed by their professionalism and expertise. The system has doubled our agricultural output in just one season.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background-image: url('https://randomuser.me/api/portraits/women/44.jpg')"></div>
+                        <div class="author-info">
+                            <h4>Sarah Chebet</h4>
+                            <p>Farm Manager, Uasin Gishu</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>As a county official, I've worked with many drilling companies. KITANY DRILLERS stands out for their commitment to quality and their understanding of local water challenges.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background-image: url('https://randomuser.me/api/portraits/men/75.jpg')"></div>
+                        <div class="author-info">
+                            <h4>David Rotich</h4>
+                            <p>County Water Officer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="projects">
-    <h2>Our Projects</h2>
-    
-    
-    <div class="project-card">
-      <h3>Project Borehole Alpha</h3>
-      <p>
-        Completed in Elgeyo Marakwet County, this project involved drilling a borehole that now supplies clean water to rural communities.
-      </p>
-    </div>
-    
-    
-    <div class="project-card">
-      <h3>Water Purification Initiative</h3>
-      <p>
-        Located in Nakuru, this project installed a state-of-the-art water purification system to ensure a sustainable water supply for local residents.
-      </p>
-    </div>
-    
-    
-    <div class="project-card">
-      <h3>Community Borehole Beta</h3>
-      <p>
-        In West Pokot, this project provided a reliable water source for schools and communities, significantly improving local access to clean water.
-      </p>
-    </div>
-  </section>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>KITANY DRILLERS is a leading provider of water drilling solutions in East Africa, with expertise in borehole drilling, water treatment, and sustainable water management.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="request-quote.html">Get a Quote</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+                    <p><i class="fas fa-phone"></i> +254 712 345 678</p>
+                    <p><i class="fas fa-envelope"></i> info@kitanydrillers.com</p>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://whatsapp.com" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 KITANY DRILLERS. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-  
-  <footer style="background-color: green; color: white; padding: 20px; text-align: center;">
-    <p>&copy; 2025 KITANY DRILLERS. All Rights Reserved.</p>
-    <ul class="social-links" style="list-style: none; padding: 0; display: flex; justify-content: center; gap: 15px;">
-        <li><a href="https://facebook.com" target="_blank" style="color: white;"><i class="fab fa-facebook-f"></i></a></li>
-        <li><a href="https://twitter.com" target="_blank" style="color: white;"><i class="fab fa-twitter"></i></a></li>
-        <li><a href="https://linkedin.com" target="_blank" style="color: white;"><i class="fab fa-linkedin-in"></i></a></li>
-        <li><a href="https://whatsapp.com" target="_blank" style="color: white;"><i class="fab fa-whatsapp"></i></a></li>
-    </ul>
-</footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Mobile menu toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                hamburger.innerHTML = navLinks.classList.contains('active') ? 
+                    '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
+            
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+            
+            // Active link highlighting
+            const currentPath = window.location.pathname.split("/").pop();
+            const navLinksMap = {
+                'index.html': 'home-btn',
+                'services.html': 'services-btn',
+                'projects.html': 'projects-btn',
+                'request-quote.html': 'quote-btn',
+                'faq.html': 'faq-btn',
+                'contact.html': 'contact-btn',
+                'about.html': 'about-btn'
+            };
 
-  
+            Object.values(navLinksMap).forEach(id => {
+                const element = document.getElementById(id);
+                if (element) element.classList.remove('active');
+            });
+            
+            if (navLinksMap[currentPath]) {
+                document.getElementById(navLinksMap[currentPath])?.classList.add('active');
+            }
+            
+            // Add animation to project cards when they come into view
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            const projectObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            projectCards.forEach((card, index) => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+                projectObserver.observe(card);
+            });
+            
+            // Animate stats counting
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const statsSection = document.querySelector('.stats-section');
+            
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        statNumbers.forEach(stat => {
+                            const target = +stat.textContent.replace('+', '');
+                            const increment = target / 20;
+                            let current = 0;
+                            
+                            const timer = setInterval(() => {
+                                current += increment;
+                                if (current >= target) {
+                                    clearInterval(timer);
+                                    stat.textContent = target + (stat.textContent.includes('+') ? '+' : '');
+                                } else {
+                                    stat.textContent = Math.floor(current) + (stat.textContent.includes('+') ? '+' : '');
+                                }
+                            }, 50);
+                        });
+                        
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            statsObserver.observe(statsSection);
+        });
+    </script>
 </body>
 </html>

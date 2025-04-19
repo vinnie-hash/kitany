@@ -3,61 +3,845 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional water drilling services including borehole drilling, water treatment, and pump installation across East Africa.">
+    <meta name="keywords" content="water drilling services, borehole drilling, water treatment, pump installation, geological surveys">
     <title>Services - KITANY DRILLERS</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #006837;
+            --secondary-color: #004225;
+            --accent-color: #8DC63F;
+            --light-color: #f8f9fa;
+            --dark-color: #333;
+            --text-color: #444;
+            --white: #fff;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            overflow-x: hidden;
+            background-color: var(--light-color);
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }
+        
+        /* Navigation */
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .nav-links a {
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            background-color: var(--secondary-color);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        /* Services Section */
+        .services-section {
+            padding: 120px 0 80px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+            font-size: 2rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 15px auto;
+        }
+        
+        .services-intro {
+            max-width: 800px;
+            margin: 0 auto 50px;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-image {
+            height: 200px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-content {
+            padding: 30px;
+        }
+        
+        .service-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .service-content h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .service-content p {
+            margin-bottom: 20px;
+        }
+        
+        .service-features {
+            margin: 20px 0;
+        }
+        
+        .service-features li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .service-features li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+        
+        .service-cta {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .service-cta:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Process Section */
+        .process-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .process-step {
+            flex: 1 1 200px;
+            max-width: 250px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .process-step::after {
+            content: '\f054';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: -25px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent-color);
+            font-size: 1.5rem;
+        }
+        
+        .process-step:last-child::after {
+            display: none;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+        
+        .step-title {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background-color: var(--white);
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .faq-question {
+            padding: 20px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+        }
+        
+        .faq-question::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            transition: var(--transition);
+        }
+        
+        .faq-question.active::after {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-answer-content {
+            padding: 20px 0;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            gap: 30px;
+        }
+        
+        .footer-section {
+            flex: 1 1 300px;
+            text-align: left;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .footer-section p, .footer-section a {
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .footer-section a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .process-step::after {
+                display: none;
+            }
+            
+            .process-step {
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--secondary-color);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+                transition: var(--transition);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .services-section {
+                padding: 100px 0 60px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .footer-section {
+                text-align: center;
+            }
+            
+            .footer-section h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .services-intro {
+                font-size: 1rem;
+            }
+            
+            .service-content {
+                padding: 20px;
+            }
+            
+            .service-content h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-
-   
-    <header>
-        <nav>
-            <div class="logo">KITANY DRILLERS</div>
+    <header role="banner">
+        <div class="container header-container">
+            <div class="logo">KITANY <span>DRILLERS</span></div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
             <ul class="nav-links">
                 <li><a href="index.html" id="home-btn">Home</a></li>
                 <li><a href="services.html" id="services-btn" class="active">Services</a></li>
                 <li><a href="projects.html" id="projects-btn">Projects</a></li>
                 <li><a href="request-quote.html" id="quote-btn">Request a Quote</a></li>
-                <li><a href="faq.html" id="faq-btn">FAQ</a></li> 
+                <li><a href="faq.html" id="faq-btn">FAQ</a></li>
                 <li><a href="contact.html" id="contact-btn">Contact</a></li>
                 <li><a href="about.html" id="about-btn">About Us</a></li>
             </ul>
-        </nav>
+        </div>
     </header>
+
+    <section class="services-section" aria-labelledby="services-title">
+        <div class="container">
+            <h2 id="services-title" class="section-title">Our Professional Services</h2>
+            
+            <div class="services-intro">
+                <p>KITANY DRILLERS offers comprehensive water solutions across East Africa. Our expert team combines cutting-edge technology with years of experience to deliver reliable, sustainable water access for communities, businesses, and agricultural projects.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae')"></div>
+                    <div class="service-content">
+                        <h3>Borehole Drilling</h3>
+                        <p>Professional drilling services to access clean groundwater with depth capacities up to 300 meters.</p>
+                        
+                        <ul class="service-features">
+                            <li>Rotary and percussion drilling methods</li>
+                            <li>Stainless steel casing installation</li>
+                            <li>Depth capacity up to 300m</li>
+                            <li>Yield testing and analysis</li>
+                        </ul>
+                        
+                        <a href="request-quote.html" class="service-cta">Get a Quote</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1551218808-94e220e084d2')"></div>
+                    <div class="service-content">
+                        <h3>Water Treatment</h3>
+                        <p>Comprehensive water purification systems to ensure safe, potable water for all applications.</p>
+                        
+                        <ul class="service-features">
+                            <li>Filtration systems installation</li>
+                            <li>Chemical treatment solutions</li>
+                            <li>UV purification technology</li>
+                            <li>Water quality testing</li>
+                        </ul>
+                        
+                        <a href="request-quote.html" class="service-cta">Get a Quote</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1586771107445-d3ca888129ce')"></div>
+                    <div class="service-content">
+                        <h3>Geological Surveys</h3>
+                        <p>Advanced hydrogeological assessments to identify optimal water sources and drilling locations.</p>
+                        
+                        <ul class="service-features">
+                            <li>Geophysical surveys</li>
+                            <li>Groundwater potential assessment</li>
+                            <li>Site suitability analysis</li>
+                            <li>Comprehensive reporting</li>
+                        </ul>
+                        
+                        <a href="request-quote.html" class="service-cta">Get a Quote</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1624398755210-1053e8e00504')"></div>
+                    <div class="service-content">
+                        <h3>Pump Installation</h3>
+                        <p>Professional installation of efficient pumping systems tailored to your water needs.</p>
+                        
+                        <ul class="service-features">
+                            <li>Solar-powered pump systems</li>
+                            <li>Submersible pumps</li>
+                            <li>Pressure tank installation</li>
+                            <li>Maintenance services</li>
+                        </ul>
+                        
+                        <a href="request-quote.html" class="service-cta">Get a Quote</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1509316785289-025f5b846b35')"></div>
+                    <div class="service-content">
+                        <h3>Water Storage Solutions</h3>
+                        <p>Custom-designed water storage systems for reliable water supply management.</p>
+                        
+                        <ul class="service-features">
+                            <li>Steel and plastic tank installation</li>
+                            <li>Reservoir construction</li>
+                            <li>Water tower erection</li>
+                            <li>Distribution systems</li>
+                        </ul>
+                        
+                        <a href="request-quote.html" class="service-cta">Get a Quote</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1509391366360-2e959784a276')"></div>
+                    <div class="service-content">
+                        <h3>Maintenance & Repair</h3>
+                        <p>Comprehensive maintenance services to keep your water systems operating at peak efficiency.</p>
+                        
+                        <ul class="service-features">
+                            <li>Borehole rehabilitation</li>
+                            <li>Pump repair services</li>
+                            <li>System troubleshooting</li>
+                            <li>Preventive maintenance</li>
+                        </ul>
+                        
+                        <a href="request-quote.html" class="service-cta">Get a Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     
-   
-    <section class="services">
-        <h2>Our Services</h2>
-        <div class="service-container">
-            <div class="service-card">
-                <h3>Borehole Drilling</h3>
-                <p>We specialize in drilling deep boreholes to access clean groundwater.</p>
+    <section class="process-section" aria-labelledby="process-title">
+        <div class="container">
+            <h2 id="process-title" class="section-title">Our Service Process</h2>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Consultation</h3>
+                    <p>We discuss your water needs and project requirements</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Site Survey</h3>
+                    <p>Our experts conduct thorough geological assessments</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Proposal</h3>
+                    <p>We provide a detailed project plan and quotation</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Implementation</h3>
+                    <p>Professional execution of the approved solution</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3 class="step-title">Completion</h3>
+                    <p>Final testing and handover with documentation</p>
+                </div>
             </div>
-            <div class="service-card">
-                <h3>Water Treatment</h3>
-                <p>Providing water treatment solutions to ensure safe drinking water.</p>
-            </div>
-            <div class="service-card">
-                <h3>Geological Surveys</h3>
-                <p>Conducting detailed surveys to identify potential water sources.</p>
-            </div>
-            <div class="service-card">
-                <h3>Pump Installation</h3>
-                <p>Installing reliable water pumps for efficient water extraction.</p>
+        </div>
+    </section>
+    
+    <section class="faq-section" aria-labelledby="faq-title">
+        <div class="container">
+            <h2 id="faq-title" class="section-title">Service FAQs</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">How deep can you drill a borehole?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Our drilling equipment can reach depths of up to 300 meters, depending on geological conditions. The actual depth required for your borehole will be determined during our site survey, based on water table levels and geological formations in your area.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What's the typical project timeline?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Most standard borehole projects take between 3-7 days for drilling and casing, with additional time required for pump installation and water testing. Complex projects or those requiring extensive surveys may take longer. We provide a detailed timeline during the proposal stage.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Do you offer maintenance services?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Yes, we provide comprehensive maintenance packages for all water systems we install. Our maintenance services include regular inspections, pump servicing, water quality testing, and system performance optimization. We recommend annual maintenance for optimal system longevity.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What areas do you serve?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>We operate throughout Kenya, with extensive experience in Elgeyo Marakwet, Uasin Gishu, Nakuru, and West Pokot counties. We also provide services in South Sudan and Uganda. Contact us to confirm availability in your specific location.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer style="background-color: green; color: white; padding: 20px; text-align: center;">
-        <p>&copy; 2025 KITANY DRILLERS. All Rights Reserved.</p>
-        <ul class="social-links" style="list-style: none; padding: 0; display: flex; justify-content: center; gap: 15px;">
-            <li><a href="https://facebook.com" target="_blank" style="color: white;"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="https://twitter.com" target="_blank" style="color: white;"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://linkedin.com" target="_blank" style="color: white;"><i class="fab fa-linkedin-in"></i></a></li>
-            <li><a href="https://whatsapp.com" target="_blank" style="color: white;"><i class="fab fa-whatsapp"></i></a></li>
-        </ul>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>KITANY DRILLERS is a leading provider of water drilling solutions in East Africa, with expertise in borehole drilling, water treatment, and sustainable water management.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="request-quote.html">Get a Quote</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+                    <p><i class="fas fa-phone"></i> +254 712 345 678</p>
+                    <p><i class="fas fa-envelope"></i> info@kitanydrillers.com</p>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://whatsapp.com" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 KITANY DRILLERS. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
-    
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Mobile menu toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                hamburger.innerHTML = navLinks.classList.contains('active') ? 
+                    '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
+            
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+            
+            // Active link highlighting
+            const currentPath = window.location.pathname.split("/").pop();
+            const navLinksMap = {
+                'index.html': 'home-btn',
+                'services.html': 'services-btn',
+                'projects.html': 'projects-btn',
+                'request-quote.html': 'quote-btn',
+                'faq.html': 'faq-btn',
+                'contact.html': 'contact-btn',
+                'about.html': 'about-btn'
+            };
+
+            Object.values(navLinksMap).forEach(id => {
+                const element = document.getElementById(id);
+                if (element) element.classList.remove('active');
+            });
+            
+            if (navLinksMap[currentPath]) {
+                document.getElementById(navLinksMap[currentPath])?.classList.add('active');
+            }
+            
+            // FAQ functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    question.classList.toggle('active');
+                    const answer = question.nextElementSibling;
+                    
+                    if (question.classList.contains('active')) {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    } else {
+                        answer.style.maxHeight = '0';
+                    }
+                });
+            });
+            
+            // Add animation to elements when they come into view
+            const animateOnScroll = (elements, className) => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add(className);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                
+                elements.forEach(element => {
+                    observer.observe(element);
+                });
+            };
+            
+            // Animate service cards
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+            });
+            animateOnScroll(serviceCards, 'animated');
+            
+            // Animate process steps
+            const processSteps = document.querySelectorAll('.process-step');
+            processSteps.forEach((step, index) => {
+                step.style.opacity = '0';
+                step.style.transform = 'translateY(20px)';
+                step.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+            });
+            animateOnScroll(processSteps, 'animated');
+            
+            // Add animated class styles
+            const style = document.createElement('style');
+            style.textContent = `
+                .animated {
+                    opacity: 1 !important;
+                    transform: translateY(0) !important;
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
 </body>
 </html>

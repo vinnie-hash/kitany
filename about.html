@@ -3,75 +3,675 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about KITANY DRILLERS - our mission, vision, and areas of operation across East Africa.">
+  <meta name="keywords" content="water drilling company, about kitany drillers, east africa water solutions">
   <title>About Us - KITANY DRILLERS</title>
-  <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
-    .areas-of-operation ul {
-      list-style-type: none; 
-      padding: 0; 
+    :root {
+      --primary-color: #006837;
+      --secondary-color: #004225;
+      --accent-color: #8DC63F;
+      --light-color: #f8f9fa;
+      --dark-color: #333;
+      --text-color: #444;
+      --white: #fff;
+      --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
     }
-
-    .areas-of-operation li {
-      border: none; 
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      overflow-x: hidden;
+      background-color: var(--light-color);
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+    
+    ul {
+      list-style: none;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header Styles */
+    header {
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 15px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--box-shadow);
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    
+    .logo span {
+      color: var(--accent-color);
+    }
+    
+    /* Navigation */
+    .nav-links {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .nav-links a {
+      padding: 8px 15px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+    
+    .nav-links a:hover, .nav-links a.active {
+      background-color: var(--secondary-color);
+    }
+    
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+    
+    /* About Section */
+    .about-section {
+      padding: 120px 0 80px;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+      color: var(--primary-color);
+      font-size: 2rem;
+      position: relative;
+    }
+    
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background-color: var(--accent-color);
+      margin: 15px auto;
+    }
+    
+    .about-content {
+      max-width: 800px;
+      margin: 0 auto 50px;
+      text-align: center;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    
+    .mission-vision {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 50px;
+      justify-content: center;
+    }
+    
+    .mission, .vision {
+      flex: 1 1 300px;
+      background-color: var(--white);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: var(--box-shadow);
+      text-align: center;
+      transition: var(--transition);
+    }
+    
+    .mission:hover, .vision:hover {
+      transform: translateY(-10px);
+    }
+    
+    .mission h3, .vision h3 {
+      color: var(--primary-color);
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .mission h3::after, .vision h3::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background-color: var(--accent-color);
+    }
+    
+    .mission i, .vision i {
+      font-size: 2.5rem;
+      color: var(--accent-color);
+      margin-bottom: 20px;
+    }
+    
+    .areas-of-operation {
+      background-color: var(--white);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: var(--box-shadow);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .areas-of-operation h3 {
+      text-align: center;
+      color: var(--primary-color);
+      margin-bottom: 30px;
+      font-size: 1.5rem;
+    }
+    
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    
+    .area-card {
+      background-color: var(--light-color);
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      transition: var(--transition);
+      border-left: 4px solid var(--accent-color);
+    }
+    
+    .area-card:hover {
+      background-color: var(--primary-color);
+      color: var(--white);
+      transform: translateY(-5px);
+    }
+    
+    .area-card i {
+      color: var(--accent-color);
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    
+    .area-card:hover i {
+      color: var(--white);
+    }
+    
+    /* Team Section */
+    .team-section {
+      padding: 80px 0;
+      background-color: var(--white);
+    }
+    
+    .team-members {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    
+    .team-member {
+      flex: 1 1 250px;
+      max-width: 300px;
+      background-color: var(--light-color);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+    }
+    
+    .team-member:hover {
+      transform: translateY(-10px);
+    }
+    
+    .member-image {
+      height: 250px;
+      background-color: #ddd;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .member-info {
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .member-info h4 {
+      color: var(--primary-color);
+      margin-bottom: 5px;
+    }
+    
+    .member-info p {
+      color: var(--accent-color);
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 50px 0 20px;
+      text-align: center;
+    }
+    
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-bottom: 30px;
+      gap: 30px;
+    }
+    
+    .footer-section {
+      flex: 1 1 300px;
+      text-align: left;
+    }
+    
+    .footer-section h3 {
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-section h3::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 50px;
+      height: 2px;
+      background-color: var(--accent-color);
+    }
+    
+    .footer-section p, .footer-section a {
+      margin-bottom: 10px;
+      display: block;
+    }
+    
+    .footer-section a:hover {
+      color: var(--accent-color);
+      padding-left: 5px;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+      transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+      background-color: var(--accent-color);
+      transform: translateY(-5px);
+    }
+    
+    .copyright {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .mission-vision {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .mission, .vision {
+        width: 100%;
+        max-width: 500px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+      
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background-color: var(--secondary-color);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        transition: var(--transition);
+      }
+      
+      .nav-links.active {
+        left: 0;
+      }
+      
+      .about-section {
+        padding: 100px 0 60px;
+      }
+      
+      .section-title {
+        font-size: 1.8rem;
+      }
+      
+      .footer-section {
+        text-align: center;
+      }
+      
+      .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .section-title {
+        font-size: 1.5rem;
+      }
+      
+      .about-content {
+        font-size: 1rem;
+      }
+      
+      .areas-of-operation {
+        padding: 30px 20px;
+      }
+      
+      .areas-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  
-
   <header role="banner">
-    <nav role="navigation">
-        <div class="logo">KITANY DRILLERS</div>
-        <ul class="nav-links">
-            <li><a href="index.html" id="home-btn">Home</a></li>
-            <li><a href="services.html" id="services-btn">Services</a></li>
-            <li><a href="projects.html" id="projects-btn">Projects</a></li>
-            <li><a href="request-quote.html" id="quote-btn">Request a Quote</a></li>
-            <li><a href="faq.html" id="faq-btn">FAQ</a></li> 
-            <li><a href="contact.html" id="contact-btn">Contact</a></li>
-            <li><a href="about.html" id="about-btn">About Us</a></li>
-        </ul>
-    </nav>
-</header>
-
-  <section class="about">
-    <h2>About Us</h2>
-    <p>
-      KITANY DRILLERS is a leading water drilling company operating across Kenya, South Sudan, and Uganda. Our mission is to provide sustainable water solutions to communities and businesses.
-    </p>
-    <div class="mission-vision">
-      <div class="mission">
-        <h3>Our Mission</h3>
-        <p>To deliver high-quality water drilling services while promoting environmental sustainability.</p>
+    <div class="container header-container">
+      <div class="logo">KITANY <span>DRILLERS</span></div>
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
       </div>
-      <div class="vision">
-        <h3>Our Vision</h3>
-        <p>To be the trusted partner for water drilling needs in East Africa and beyond.</p>
-      </div>
-    </div>
-    <div class="areas-of-operation">
-      <h3>Areas of Operation</h3>
-      <ul>
-        <li>Elgeyo Marakwet County</li>
-        <li>Uasin Gishu</li>
-        <li>Nakuru</li>
-        <li>West Pokot</li>
-        <li>South Sudan</li>
-        <li>Uganda</li>
+      <ul class="nav-links">
+        <li><a href="index.html" id="home-btn">Home</a></li>
+        <li><a href="services.html" id="services-btn">Services</a></li>
+        <li><a href="projects.html" id="projects-btn">Projects</a></li>
+        <li><a href="request-quote.html" id="quote-btn">Request a Quote</a></li>
+        <li><a href="faq.html" id="faq-btn">FAQ</a></li>
+        <li><a href="contact.html" id="contact-btn">Contact</a></li>
+        <li><a href="about.html" id="about-btn" class="active">About Us</a></li>
       </ul>
+    </div>
+  </header>
+
+  <section class="about-section" aria-labelledby="about-title">
+    <div class="container">
+      <h2 id="about-title" class="section-title">About KITANY DRILLERS</h2>
+      
+      <div class="about-content">
+        <p>KITANY DRILLERS is a premier water drilling company operating across Kenya, South Sudan, and Uganda. With over 15 years of experience in the industry, we are committed to providing sustainable water solutions to communities, businesses, and government institutions throughout East Africa.</p>
+      </div>
+      
+      <div class="mission-vision">
+        <div class="mission">
+          <i class="fas fa-bullseye"></i>
+          <h3>Our Mission</h3>
+          <p>To deliver high-quality, reliable water drilling services while promoting environmental sustainability and community development through innovative water solutions.</p>
+        </div>
+        
+        <div class="vision">
+          <i class="fas fa-eye"></i>
+          <h3>Our Vision</h3>
+          <p>To be the most trusted and technologically advanced water drilling partner in East Africa, transforming lives through sustainable water access.</p>
+        </div>
+      </div>
+      
+      <div class="areas-of-operation">
+        <h3>Our Areas of Operation</h3>
+        <div class="areas-grid">
+          <div class="area-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h4>Elgeyo Marakwet</h4>
+          </div>
+          <div class="area-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h4>Uasin Gishu</h4>
+          </div>
+          <div class="area-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h4>Nakuru County</h4>
+          </div>
+          <div class="area-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h4>West Pokot</h4>
+          </div>
+          <div class="area-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h4>South Sudan</h4>
+          </div>
+          <div class="area-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h4>Uganda</h4>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
   
-  <footer style="background-color: green; color: white; padding: 20px; text-align: center;">
-    <p>&copy; 2025 KITANY DRILLERS. All Rights Reserved.</p>
-    <ul class="social-links" style="list-style: none; padding: 0; display: flex; justify-content: center; gap: 15px;">
-        <li><a href="https://facebook.com" target="_blank" style="color: white;"><i class="fab fa-facebook-f"></i></a></li>
-        <li><a href="https://twitter.com" target="_blank" style="color: white;"><i class="fab fa-twitter"></i></a></li>
-        <li><a href="https://linkedin.com" target="_blank" style="color: white;"><i class="fab fa-linkedin-in"></i></a></li>
-        <li><a href="https://whatsapp.com" target="_blank" style="color: white;"><i class="fab fa-whatsapp"></i></a></li>
-    </ul>
-</footer>
+  <section class="team-section" aria-labelledby="team-title">
+    <div class="container">
+      <h2 id="team-title" class="section-title">Our Leadership Team</h2>
+      
+      <div class="team-members">
+        <div class="team-member">
+          <div class="member-image" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a')"></div>
+          <div class="member-info">
+            <h4>John Kitany</h4>
+            <p>Founder & CEO</p>
+            <p>15+ years in water engineering</p>
+          </div>
+        </div>
+        
+        <div class="team-member">
+          <div class="member-image" style="background-image: url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e')"></div>
+          <div class="member-info">
+            <h4>Sarah Mwangi</h4>
+            <p>Operations Manager</p>
+            <p>Project management expert</p>
+          </div>
+        </div>
+        
+        <div class="team-member">
+          <div class="member-image" style="background-image: url('https://images.unsplash.com/photo-1580489944761-15a19d654956')"></div>
+          <div class="member-info">
+            <h4>David Omondi</h4>
+            <p>Head of Engineering</p>
+            <p>Water systems specialist</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>KITANY DRILLERS is a leading provider of water drilling solutions in East Africa, with expertise in borehole drilling, water treatment, and sustainable water management.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="request-quote.html">Get a Quote</a>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Contact Info</h3>
+          <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+          <p><i class="fas fa-phone"></i> +254 712 345 678</p>
+          <p><i class="fas fa-envelope"></i> info@kitanydrillers.com</p>
+        </div>
+      </div>
+      
+      <div class="social-links">
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://whatsapp.com" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2025 KITANY DRILLERS. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Mobile menu toggle
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+      
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        hamburger.innerHTML = navLinks.classList.contains('active') ? 
+          '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+      });
+      
+      // Close mobile menu when clicking a link
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+          hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+      });
+      
+      // Active link highlighting
+      const currentPath = window.location.pathname.split("/").pop();
+      const navLinksMap = {
+        'index.html': 'home-btn',
+        'services.html': 'services-btn',
+        'projects.html': 'projects-btn',
+        'request-quote.html': 'quote-btn',
+        'faq.html': 'faq-btn',
+        'contact.html': 'contact-btn',
+        'about.html': 'about-btn'
+      };
+
+      Object.values(navLinksMap).forEach(id => {
+        const element = document.getElementById(id);
+        if (element) element.classList.remove('active');
+      });
+      
+      if (navLinksMap[currentPath]) {
+        document.getElementById(navLinksMap[currentPath])?.classList.add('active');
+      }
+      
+      // Add animation to elements when they come into view
+      const animateOnScroll = (elements, className) => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add(className);
+            }
+          });
+        }, { threshold: 0.1 });
+        
+        elements.forEach(element => {
+          observer.observe(element);
+        });
+      };
+      
+      // Animate mission/vision cards
+      const missionVision = document.querySelectorAll('.mission, .vision');
+      missionVision.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      });
+      animateOnScroll(missionVision, 'animated');
+      
+      // Animate area cards
+      const areaCards = document.querySelectorAll('.area-card');
+      areaCards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+      });
+      animateOnScroll(areaCards, 'animated');
+      
+      // Animate team members
+      const teamMembers = document.querySelectorAll('.team-member');
+      teamMembers.forEach((member, index) => {
+        member.style.opacity = '0';
+        member.style.transform = 'translateY(20px)';
+        member.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+      });
+      animateOnScroll(teamMembers, 'animated');
+      
+      // Add animated class styles
+      const style = document.createElement('style');
+      style.textContent = `
+        .animated {
+          opacity: 1 !important;
+          transform: translateY(0) !important;
+        }
+      `;
+      document.head.appendChild(style);
+    });
+  </script>
 </body>
 </html>
