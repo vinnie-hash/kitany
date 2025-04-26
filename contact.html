@@ -59,7 +59,7 @@
             padding: 0 20px;
         }
         
-        /* Header Styles */
+        
         header {
             background-color: var(--primary-color);
             color: var(--white);
@@ -87,7 +87,7 @@
             color: var(--accent-color);
         }
         
-        /* Navigation */
+        
         .nav-links {
             display: flex;
             gap: 15px;
@@ -109,7 +109,7 @@
             font-size: 1.5rem;
         }
         
-        /* Contact Section */
+        
         .contact-section {
             padding: 120px 0 80px;
         }
@@ -139,7 +139,7 @@
             line-height: 1.8;
         }
         
-        /* New Layout with Map on Top */
+        
         .contact-top-section {
             display: flex;
             flex-wrap: wrap;
@@ -222,7 +222,7 @@
             color: var(--accent-color);
         }
         
-        /* Form Styles */
+    
         .form-card {
             background-color: var(--white);
             padding: 40px;
@@ -287,7 +287,7 @@
             width: 100%;
         }
         
-        /* Success Message */
+    
         .success-message {
             display: none;
             background-color: rgba(141, 198, 63, 0.1);
@@ -313,7 +313,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* Office Hours */
+        
         .office-hours {
             margin-top: 40px;
         }
@@ -337,7 +337,7 @@
             color: var(--primary-color);
         }
         
-        /* Footer */
+        
         footer {
             background-color: var(--primary-color);
             color: var(--white);
@@ -415,7 +415,7 @@
             font-size: 0.9rem;
         }
         
-        /* Responsive Design */
+        
         @media (max-width: 768px) {
             .hamburger {
                 display: block;
@@ -522,7 +522,7 @@
                 <p>Have questions about our water drilling services or need expert advice? Reach out to our team today. We're here to help you find the best water solutions for your needs.</p>
             </div>
             
-            <!-- New Map Section at Top -->
+            
             <div class="contact-top-section">
                 <div class="map-container">
                     <iframe 
@@ -533,7 +533,7 @@
                 </div>
             </div>
             
-            <!-- Contact Info and Form Below -->
+    
             <div class="contact-bottom-section">
                 <div class="contact-info">
                     <div class="info-card">
@@ -690,7 +690,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Mobile menu toggle
+    
             const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
             
@@ -700,7 +700,7 @@
                     '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
             });
             
-            // Close mobile menu when clicking a link
+        
             document.querySelectorAll('.nav-links a').forEach(link => {
                 link.addEventListener('click', () => {
                     navLinks.classList.remove('active');
@@ -708,7 +708,7 @@
                 });
             });
             
-            // Active link highlighting
+        
             const currentPath = window.location.pathname.split("/").pop();
             const navLinksMap = {
                 'index.html': 'home-btn',
@@ -729,26 +729,26 @@
                 document.getElementById(navLinksMap[currentPath])?.classList.add('active');
             }
             
-            // Form submission
+            
             const inquiryForm = document.getElementById('inquiryForm');
             const successMessage = document.getElementById('successMessage');
             
             inquiryForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
-                // Simulate form submission (replace with actual AJAX call)
+            
                 setTimeout(() => {
                     inquiryForm.reset();
                     successMessage.classList.add('show');
                     
-                    // Hide success message after 5 seconds
+                    
                     setTimeout(() => {
                         successMessage.classList.remove('show');
                     }, 5000);
                 }, 1000);
             });
             
-            // Add animation to contact methods when they come into view
+            
             const contactMethods = document.querySelectorAll('.contact-method');
             
             const contactObserver = new IntersectionObserver((entries) => {

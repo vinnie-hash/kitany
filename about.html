@@ -581,7 +581,7 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // Mobile menu toggle
+    
       const hamburger = document.querySelector('.hamburger');
       const navLinks = document.querySelector('.nav-links');
       
@@ -591,7 +591,7 @@
           '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
       });
       
-      // Close mobile menu when clicking a link
+      
       document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
           navLinks.classList.remove('active');
@@ -599,7 +599,7 @@
         });
       });
       
-      // Active link highlighting
+
       const currentPath = window.location.pathname.split("/").pop();
       const navLinksMap = {
         'index.html': 'home-btn',
@@ -620,7 +620,7 @@
         document.getElementById(navLinksMap[currentPath])?.classList.add('active');
       }
       
-      // Add animation to elements when they come into view
+      
       const animateOnScroll = (elements, className) => {
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
@@ -635,7 +635,7 @@
         });
       };
       
-      // Animate mission/vision cards
+      
       const missionVision = document.querySelectorAll('.mission, .vision');
       missionVision.forEach(el => {
         el.style.opacity = '0';
@@ -644,7 +644,7 @@
       });
       animateOnScroll(missionVision, 'animated');
       
-      // Animate area cards
+      
       const areaCards = document.querySelectorAll('.area-card');
       areaCards.forEach((card, index) => {
         card.style.opacity = '0';
@@ -653,7 +653,7 @@
       });
       animateOnScroll(areaCards, 'animated');
       
-      // Animate team members
+    
       const teamMembers = document.querySelectorAll('.team-member');
       teamMembers.forEach((member, index) => {
         member.style.opacity = '0';
@@ -662,7 +662,7 @@
       });
       animateOnScroll(teamMembers, 'animated');
       
-      // Add animated class styles
+      
       const style = document.createElement('style');
       style.textContent = `
         .animated {

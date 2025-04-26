@@ -59,7 +59,7 @@
             padding: 0 20px;
         }
         
-        /* Header Styles */
+
         header {
             background-color: var(--primary-color);
             color: var(--white);
@@ -87,7 +87,7 @@
             color: var(--accent-color);
         }
         
-        /* Navigation */
+        
         .nav-links {
             display: flex;
             gap: 15px;
@@ -109,7 +109,7 @@
             font-size: 1.5rem;
         }
         
-        /* Projects Section */
+        
         .projects-section {
             padding: 120px 0 80px;
         }
@@ -225,7 +225,7 @@
             transform: translateY(-3px);
         }
         
-        /* Stats Section */
+        
         .stats-section {
             padding: 80px 0;
             background-color: var(--primary-color);
@@ -254,7 +254,7 @@
             font-size: 1.1rem;
         }
         
-        /* Testimonials Section */
+        
         .testimonials-section {
             padding: 80px 0;
             background-color: var(--white);
@@ -315,7 +315,7 @@
             color: var(--text-color);
         }
         
-        /* Footer */
+        
         footer {
             background-color: var(--primary-color);
             color: var(--white);
@@ -393,7 +393,7 @@
             font-size: 0.9rem;
         }
         
-        /* Responsive Design */
+        
         @media (max-width: 992px) {
             .projects-grid {
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -791,7 +791,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Mobile menu toggle
+            
             const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
             
@@ -801,7 +801,7 @@
                     '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
             });
             
-            // Close mobile menu when clicking a link
+        
             document.querySelectorAll('.nav-links a').forEach(link => {
                 link.addEventListener('click', () => {
                     navLinks.classList.remove('active');
@@ -809,7 +809,7 @@
                 });
             });
             
-            // Active link highlighting
+            
             const currentPath = window.location.pathname.split("/").pop();
             const navLinksMap = {
                 'index.html': 'home-btn',
@@ -830,7 +830,7 @@
                 document.getElementById(navLinksMap[currentPath])?.classList.add('active');
             }
             
-            // Add animation to project cards when they come into view
+            
             const projectCards = document.querySelectorAll('.project-card');
             
             const projectObserver = new IntersectionObserver((entries) => {
@@ -849,7 +849,7 @@
                 projectObserver.observe(card);
             });
             
-            // Animate stats counting
+            
             const statNumbers = document.querySelectorAll('.stat-number');
             const statsSection = document.querySelector('.stats-section');
             

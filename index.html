@@ -73,7 +73,7 @@
             padding: 0 20px;
         }
         
-        /* Header Styles */
+
         header {
             background-color: var(--primary-color);
             color: var(--white);
@@ -101,7 +101,7 @@
             color: var(--accent-color);
         }
         
-        /* Navigation */
+        
         .nav-links {
             display: flex;
             gap: 15px;
@@ -123,7 +123,7 @@
             font-size: 1.5rem;
         }
         
-        /* Hero Section */
+    
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae') no-repeat center center/cover;
             height: 100vh;
@@ -151,7 +151,7 @@
             margin-bottom: 30px;
         }
         
-        /* Button Styles */
+        
         .btn {
             display: inline-block;
             background-color: var(--accent-color);
@@ -172,7 +172,7 @@
             box-shadow: var(--box-shadow);
         }
         
-        /* Projects Section */
+        
         .projects {
             padding: 80px 0;
             background-color: var(--light-color);
@@ -225,7 +225,7 @@
             font-size: 1.5rem;
         }
         
-        /* Footer */
+        
         footer {
             background-color: var(--primary-color);
             color: var(--white);
@@ -303,7 +303,7 @@
             font-size: 0.9rem;
         }
         
-        /* Responsive Design */
+        
         @media (max-width: 992px) {
             .hero h1 {
                 font-size: 2.2rem;
@@ -488,7 +488,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Mobile menu toggle
+            
             const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
             
@@ -498,7 +498,7 @@
                     '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
             });
             
-            // Close mobile menu when clicking a link
+
             document.querySelectorAll('.nav-links a').forEach(link => {
                 link.addEventListener('click', () => {
                     navLinks.classList.remove('active');
@@ -506,7 +506,7 @@
                 });
             });
             
-            // Active link highlighting
+        
             const currentPath = window.location.pathname.split("/").pop();
             const navLinksMap = {
                 'index.html': 'home-btn',
@@ -527,7 +527,7 @@
                 document.getElementById(navLinksMap[currentPath])?.classList.add('active');
             }
             
-            // Smooth scrolling for anchor links
+            
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -537,7 +537,7 @@
                 });
             });
             
-            // Add animation to projects when they come into view
+            
             const projects = document.querySelectorAll('.project');
             
             const projectObserver = new IntersectionObserver((entries) => {

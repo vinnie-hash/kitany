@@ -59,7 +59,7 @@
             padding: 0 20px;
         }
         
-        /* Header Styles */
+        
         header {
             background-color: var(--primary-color);
             color: var(--white);
@@ -87,7 +87,7 @@
             color: var(--accent-color);
         }
         
-        /* Navigation */
+    
         .nav-links {
             display: flex;
             gap: 15px;
@@ -109,7 +109,7 @@
             font-size: 1.5rem;
         }
         
-        /* Quote Section */
+        
         .quote-section {
             padding: 120px 0 80px;
         }
@@ -261,7 +261,7 @@
             margin-bottom: 5px;
         }
         
-        /* Success Message */
+        
         .success-message {
             display: none;
             background-color: rgba(141, 198, 63, 0.1);
@@ -287,7 +287,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* Process Section */
+        
         .process-section {
             padding: 80px 0;
             background-color: var(--white);
@@ -327,7 +327,7 @@
             font-weight: 600;
         }
         
-        /* Footer */
+        
         footer {
             background-color: var(--primary-color);
             color: var(--white);
@@ -405,7 +405,7 @@
             font-size: 0.9rem;
         }
         
-        /* Responsive Design */
+        
         @media (max-width: 992px) {
             .process-step {
                 max-width: 100%;
@@ -676,7 +676,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Mobile menu toggle
+            
             const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
             
@@ -686,7 +686,7 @@
                     '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
             });
             
-            // Close mobile menu when clicking a link
+            
             document.querySelectorAll('.nav-links a').forEach(link => {
                 link.addEventListener('click', () => {
                     navLinks.classList.remove('active');
@@ -694,7 +694,7 @@
                 });
             });
             
-            // Active link highlighting
+            
             const currentPath = window.location.pathname.split("/").pop();
             const navLinksMap = {
                 'index.html': 'home-btn',
@@ -715,26 +715,26 @@
                 document.getElementById(navLinksMap[currentPath])?.classList.add('active');
             }
             
-            // Form submission
+            
             const quoteForm = document.getElementById('quoteForm');
             const successMessage = document.getElementById('successMessage');
             
             quoteForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
-                // Simulate form submission (replace with actual AJAX call)
+                
                 setTimeout(() => {
                     quoteForm.reset();
                     successMessage.classList.add('show');
                     
-                    // Hide success message after 5 seconds
+                    
                     setTimeout(() => {
                         successMessage.classList.remove('show');
                     }, 5000);
                 }, 1000);
             });
             
-            // Add animation to process steps when they come into view
+            
             const processSteps = document.querySelectorAll('.process-step');
             
             const processObserver = new IntersectionObserver((entries) => {
